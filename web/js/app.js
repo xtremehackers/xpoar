@@ -5,6 +5,7 @@ angular.module('ARHackathon', [])
     $http.get("/xpoar/web/data/3d.json")
         .then(function(response) {
             console.log(response.data.data);
+            
             $scope.dataArray = response.data.data;
             setTimeout(function(){
                 initializeCarousel();
