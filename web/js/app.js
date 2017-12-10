@@ -2,7 +2,7 @@ angular.module('ARHackathon', [])
 .controller('AppController',function($scope,$http){
     //$scope.showDetails = false;
     $scope.dataArray = [];
-    $http.get("/web/data/3d.json")
+    $http.get("/xpoar/web/data/3d.json")
         .then(function(response) {
             console.log(response.data.data);
             $scope.dataArray = response.data.data;
