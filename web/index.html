@@ -1,0 +1,138 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>        
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>        
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script> 
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+		<style>
+		.a-canvas {
+			height: 100% !important;
+		}
+		
+		#arjsDebugUIContainer{
+			display: none;
+		}
+		
+		.a-enter-vr{
+			display: none;
+		}
+	</style>
+        <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+    <body ng-app="ARHackathon" ng-controller="AppController">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="touchTest" style="display: none;">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+      </div>
+    </nav>
+
+    
+      <!-- <a-scene embedded arjs='trackingMethod: best;'>
+          <a-anchor hit-testing-enabled='true'>
+            <a-cylinder position="0 0.5 0" radius="0.5" height="0.5" color="#FFC65D"></a-cylinder>
+          </a-anchor>
+          <a-camera-static/>
+      </a-scene>  -->
+    <a-scene>
+        <div id="background-div">
+        </div>
+        <a-entity id="entity" object-model="" 
+            crossOrigin="anonymous"  position="0 1 -3"></a-entity> 
+    </a-scene>
+    <input type="file" name="my_file" id="my-file" onchange="angular.element(this).scope().selectedFile(this)">
+          <div class="fixed-top">
+              <div snapshot></div>
+              <div details entity-mass="{{selected3dData['mass']}}"
+                entity-name="{{selected3dData['name']}}"
+                entity-size="{{selected3dData['size']}}"
+                show-details="{{showDetails}}"></div>
+              <div scales></div>
+              
+          </div>
+          <div class="fixed-bottom">
+                <a data-slide="up" id="carousel-open">
+                    <i class="glyphicon glyphicon-chevron-up"></i>
+                </a>                                           
+          </div>
+          <div class="container corousel-container">
+              <p ng-model="abc"></p>
+                <div class="row">
+                    <div class="carousel-col col-xs-8 col-sm-8 col-md-8">                        
+                        <div class="animated slideInUp carousel slide multi-item-carousel" id="theCarousel">
+							<a data-slide="up" id="carousel-close">
+								<i class="glyphicon glyphicon-chevron-down"></i>
+							</a> 
+                            <div class="carousel-inner">
+                                <div class="item" ng-repeat="data in dataArray">
+                                    <div class="col-xs-6 col-sm-3 col-md-2">
+                                        <a class="3dObj" data-url = "{{data}}">
+                                            <img ng-src="{{data['2dUrl']}}" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="col-xs-6 col-sm-3 col-md-2">
+                                        <a onclick="browseFile(this)" class="vr">
+                                            <img src="/web/img/upload2.png" class="img-responsive" style="background: #fff;padding: 15px;">
+                                            <!--<i class="fa fa-home"></i>-->
+                                        </a>
+                                        <a onclick="hideVR(this)" class="ar hidden">
+                                            <img src="/web/img/screenshot-icon.png" class="img-responsive" style="background: #fff;padding: 15px;">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                            <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+    <!-- <footer>
+        <p>&copy; Infosys Ltd</p>
+    </footer>         -->
+    </body>
+    <script src="js/vendor/html2canvas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <!--<script src="js/vendor/hammer.min.js"></script>-->
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    
+    
+    <script src="js/app.js"></script>
+    <script src="js/directives/snapshot.js"></script>
+    <script src="js/directives/details.js"></script>
+    <script src="js/directives/scale.js"></script>
+    <!--<script src="js/directives/rotate.js"></script>-->
+
+
+</html>

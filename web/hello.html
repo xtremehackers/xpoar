@@ -1,0 +1,36 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>        
+        <!-- First, include whichever version of A-Frame you like. -->
+        <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
+        <!-- Next, include three.ar.js; add the speech recognition polyfill if you want. -->
+        <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
+        <!-- Last, include aframe-ar. -->
+        <script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>            
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+
+<!-- Place the ar component on your scene, and the camera will use AR by default. -->
+<a-scene ar>
+  <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
+<a-scene>  

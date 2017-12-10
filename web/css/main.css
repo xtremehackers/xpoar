@@ -1,0 +1,196 @@
+#arjsDebugUIContainer,#theCarousel{
+    display : none;
+	  text-align: center;
+}
+.modal-content{
+  float: right;
+  right: 50px;
+  width: auto;
+  display: none;
+}
+#close{
+  position : fixed;
+}
+#close-details{
+  float : right;
+}
+#close i{
+  font-size : 20px;
+}
+#close-details i{
+  font-size : 17px;
+}
+.details-container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 15px;
+    background-color: rgba(225,225,225,0.6);
+    bottom: 0;
+    position: fixed;
+    width: 230px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+#carousel-open,#carousel-close{
+    width : 4%;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,0);
+    opacity: .5;
+    color: white; 
+    font-size: 30px;
+}
+#carousel-close{
+    display : none;    
+}
+.corousel-container{
+    background: transparent;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    left: 0px;
+}
+.carousel-col{
+    float : none;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(225, 225, 225, 0.5)
+}
+.fixed-bottom{
+    position : fixed;
+    bottom : 0;
+    width: 100%;
+    text-align: center;
+}
+.fixed-top{    
+    position: absolute;
+    top: 20px;
+    margin: 10px;
+    margin-left: 30px;
+    z-index: 100;
+    /* height: 80%;
+    width: 100%; */
+}
+.fixed-top img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 6px;
+}
+.carousel-control {
+  width: 4%;
+  background-image: none;
+}
+.carousel-control.left {
+  margin-left: -55px;
+  background : none;
+}
+.carousel-control.right {
+  margin-right: -55px;
+  background : none;
+}
+.cloneditem-1,.cloneditem-2,.cloneditem-4,.cloneditem-4,.cloneditem-5 {
+  display: none;
+}
+.item div{
+    padding: 5px;
+}
+.item img{
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+@media all and (min-width: 768px) {
+  .carousel-inner > .active.left, .carousel-inner > .prev {
+    left: -33.333%;
+  }
+  .carousel-inner > .active.right,.carousel-inner > .next {
+    left: 33.333%;
+  }
+  .carousel-inner > .left,.carousel-inner > .prev.right,.carousel-inner > .active {
+    left: 0;
+  }
+  .carousel-inner .cloneditem-1,.carousel-inner .cloneditem-2 {
+    display: block;
+  }
+}
+
+@media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+  .carousel-inner > .item.active.right,.carousel-inner > .item.next {
+        -webkit-transform: translate3d(33.333%, 0, 0);
+        transform: translate3d(33.333%, 0, 0);
+        left: 0;
+  }
+  .carousel-inner > .item.active.left,.carousel-inner > .item.prev {
+        -webkit-transform: translate3d(-33.333%, 0, 0);
+        transform: translate3d(-33.333%, 0, 0);
+        left: 0;
+  }
+  .carousel-inner > .item.left,.carousel-inner > .item.prev.right, .carousel-inner > .item.active {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        left: 0;
+  }
+}
+@media all and (min-width: 992px) {
+  .carousel-inner > .active.left,.carousel-inner > .prev {
+    left: -16.666%;
+  }
+  .carousel-inner > .active.right,.carousel-inner > .next {
+    left: 16.666%;
+  }
+  .carousel-inner > .left,.carousel-inner > .prev.right,.carousel-inner > .active {
+    left: 0;
+  }
+  .carousel-inner .cloneditem-3,.carousel-inner .cloneditem-4,.carousel-inner .cloneditem-5 {
+    display: block;
+  }
+}
+@media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+  .carousel-inner > .item.active.right,.carousel-inner > .item.next {
+    -webkit-transform: translate3d(16.666%, 0, 0);
+            transform: translate3d(16.666%, 0, 0);
+    left: 0;
+  }
+  .carousel-inner > .item.active.left,.carousel-inner > .item.prev {
+    -webkit-transform: translate3d(-16.666%, 0, 0);
+            transform: translate3d(-16.666%, 0, 0);
+    left: 0;
+  }
+  .carousel-inner > .item.left,.carousel-inner > .item.prev.right,.carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    left: 0;
+  }
+}
+
+
+
+.icon-btn{
+    font-size: 25px;
+    margin-right: 200px;
+    background: #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+ #my-file{
+    visibility : hidden;
+  }
+  #background-div{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    background-image: none;
+  }
