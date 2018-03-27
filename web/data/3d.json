@@ -2,7 +2,7 @@
   "data": [
     {
       "name": "TV",
-      "2dUrl": "/xpoar/web/data/images/TV.png",
+      "2dUrl": "/xpoar/web/data/images/TV.PNG",
       "3dUrl": "/xpoar/web/data/models/TV.json",
       "scale": "0.22 0.22 0.22",
       "rotation": "0 180 0",
